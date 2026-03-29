@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 760" width="100%" height="100%">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#333333" />
+    </marker>
+    <style>
+      .box { rx: 8px; ry: 8px; stroke: #2c3e50; stroke-width: 2; }
+      .text-main { font-family: 'Segoe UI', Helvetica, sans-serif; font-size: 18px; font-weight: bold; fill: #ffffff; text-anchor: middle; dominant-baseline: middle; }
+      .text-side { font-family: 'Segoe UI', Helvetica, sans-serif; font-size: 14px; fill: #555555; font-style: italic; }
+      .text-bracket { font-family: 'Segoe UI', Helvetica, sans-serif; font-size: 16px; font-weight: bold; text-anchor: middle; letter-spacing: 2px;}
+      .line { stroke: #333333; stroke-width: 2; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect width="100%" height="100%" fill="#f8f9fa" rx="15"/>
+
+  <rect class="box" x="250" y="50" width="350" height="60" fill="#8e44ad" />
+  <text class="text-main" x="425" y="80">Level 6: Application Level</text>
+
+  <line class="line" x1="425" y1="110" x2="425" y2="140" />
+  <text class="text-side" x="445" y="130">Executed by Level 5</text>
+
+  <rect class="box" x="250" y="150" width="350" height="60" fill="#2980b9" />
+  <text class="text-main" x="425" y="180">Level 5: Higher Order Language</text>
+
+  <line class="line" x1="425" y1="210" x2="425" y2="240" />
+  <text class="text-side" x="445" y="230">Translation (Compiler)</text>
+
+  <rect class="box" x="250" y="250" width="350" height="60" fill="#16a085" />
+  <text class="text-main" x="425" y="280">Level 4: Assembly Level</text>
+
+  <line class="line" x1="425" y1="310" x2="425" y2="340" />
+  <text class="text-side" x="445" y="330">Translation (Assembler)</text>
+
+  <rect class="box" x="250" y="350" width="350" height="60" fill="#27ae60" />
+  <text class="text-main" x="425" y="380">Level 3: Operating System Level</text>
+
+  <line class="line" x1="425" y1="410" x2="425" y2="440" />
+  <text class="text-side" x="445" y="430">Partial Interpretation</text>
+
+  <rect class="box" x="250" y="450" width="350" height="60" fill="#f39c12" />
+  <text class="text-main" x="425" y="480" style="fill: #ffffff;">Level 2: Machine Level (ISA)</text>
+
+  <line class="line" x1="425" y1="510" x2="425" y2="540" />
+  <text class="text-side" x="445" y="530">Interpretation (Microprogram)</text>
+
+  <rect class="box" x="250" y="550" width="350" height="60" fill="#d35400" />
+  <text class="text-main" x="425" y="580">Level 1: Micro-Programming Level</text>
+
+  <line class="line" x1="425" y1="610" x2="425" y2="640" />
+  <text class="text-side" x="445" y="630">Hardware Execution</text>
+
+  <rect class="box" x="250" y="650" width="350" height="60" fill="#c0392b" />
+  <text class="text-main" x="425" y="680">Level 0: Logic Gate Level</text>
+
+  <line x1="200" y1="50" x2="200" y2="310" stroke="#2980b9" stroke-width="4" />
+  <line x1="200" y1="50" x2="220" y2="50" stroke="#2980b9" stroke-width="4" />
+  <line x1="200" y1="310" x2="220" y2="310" stroke="#2980b9" stroke-width="4" />
+  <text class="text-bracket" x="175" y="180" transform="rotate(-90 175,180)" fill="#2980b9">SOFTWARE</text>
+
+  <line x1="200" y1="350" x2="200" y2="410" stroke="#27ae60" stroke-width="4" />
+  <line x1="200" y1="350" x2="220" y2="350" stroke="#27ae60" stroke-width="4" />
+  <line x1="200" y1="410" x2="220" y2="410" stroke="#27ae60" stroke-width="4" />
+  <text class="text-bracket" x="175" y="380" transform="rotate(-90 175,380)" fill="#27ae60">OS</text>
+
+  <line x1="200" y1="450" x2="200" y2="710" stroke="#c0392b" stroke-width="4" />
+  <line x1="200" y1="450" x2="220" y2="450" stroke="#c0392b" stroke-width="4" />
+  <line x1="200" y1="710" x2="220" y2="710" stroke="#c0392b" stroke-width="4" />
+  <text class="text-bracket" x="175" y="580" transform="rotate(-90 175,580)" fill="#c0392b">HARDWARE</text>
+</svg>
