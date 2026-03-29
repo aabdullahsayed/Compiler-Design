@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700" width="100%" height="100%">
+  <defs>
+    <style>
+      .bg { fill: #f8fafc; }
+      .box { fill: #ffffff; stroke: #cbd5e1; stroke-width: 2; rx: 8px; }
+      .title { font-family: 'Segoe UI', sans-serif; font-size: 28px; font-weight: bold; fill: #0f172a; }
+      .phase { font-family: 'Segoe UI', sans-serif; font-size: 22px; font-weight: bold; fill: #059669; }
+      .comment { font-family: 'Segoe UI', sans-serif; font-size: 18px; fill: #64748b; font-style: italic; }
+      .code-left { font-family: 'Consolas', monospace; font-size: 22px; font-weight: bold; fill: #1e293b; }
+      .code-comment { font-family: 'Consolas', monospace; font-size: 18px; fill: #059669; }
+      .strike { text-decoration: line-through; fill: #94a3b8; }
+    </style>
+  </defs>
+
+  <rect width="100%" height="100%" class="bg" />
+  <text x="450" y="50" class="title" text-anchor="middle">Part 3: Back-End (Machine Code)</text>
+
+  <text x="50" y="120" class="phase">5. Code Optimization</text>
+  <text x="50" y="150" class="comment">Removes redundant steps so the final program runs faster.</text>
+
+  <rect x="50" y="170" width="800" height="150" class="box" />
+  
+  <text x="100" y="210" class="code-left strike">t1 = inttofloat(60)</text>
+  <text x="100" y="250" class="code-left strike">t2 = id3 * t1</text>
+  <text x="100" y="290" class="code-left strike">t3 = id2 + t2</text>
+  
+  <text x="400" y="250" class="title" fill="#cbd5e1">→</text>
+
+  <text x="500" y="230" class="code-left">t1 = id3 * <tspan fill="#ea580c">60.0</tspan></text>
+  <text x="500" y="270" class="code-left">id1 = id2 + t1</text>
+
+  <text x="50" y="380" class="phase">6. Code Generation</text>
+  <text x="50" y="410" class="comment">Translates optimized code into specific hardware assembly and CPU registers.</text>
+
+  <rect x="50" y="430" width="800" height="230" class="box" />
+  
+  <text x="100" y="470" class="code-left">LDF  R2, id3</text>
+  <text x="400" y="470" class="code-comment">// Load 'rate' into float Register 2</text>
+
+  <text x="100" y="510" class="code-left">MULF R2, R2, #60.0</text>
+  <text x="400" y="510" class="code-comment">// Multiply Register 2 by 60.0</text>
+
+  <text x="100" y="550" class="code-left">LDF  R1, id2</text>
+  <text x="400" y="550" class="code-comment">// Load 'initial' into float Register 1</text>
+
+  <text x="100" y="590" class="code-left">ADDF R1, R1, R2</text>
+  <text x="400" y="590" class="code-comment">// Add Register 2 into Register 1</text>
+
+  <text x="100" y="630" class="code-left">STF  id1, R1</text>
+  <text x="400" y="630" class="code-comment">// Store final answer back to 'position'</text>
+
+</svg>

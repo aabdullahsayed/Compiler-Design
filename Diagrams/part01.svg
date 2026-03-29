@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 750" width="100%" height="100%">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#475569" />
+    </marker>
+    <style>
+      .bg { fill: #f8fafc; }
+      .box { fill: #ffffff; stroke: #cbd5e1; stroke-width: 2; rx: 8px; }
+      .title { font-family: 'Segoe UI', sans-serif; font-size: 28px; font-weight: bold; fill: #0f172a; }
+      .phase { font-family: 'Segoe UI', sans-serif; font-size: 22px; font-weight: bold; fill: #2563eb; }
+      .comment { font-family: 'Segoe UI', sans-serif; font-size: 18px; fill: #64748b; font-style: italic; }
+      .code { font-family: 'Consolas', monospace; font-size: 24px; font-weight: bold; fill: #1e293b; text-anchor: middle; }
+      .tree-line { stroke: #94a3b8; stroke-width: 3; }
+      .node-box { fill: #e2e8f0; rx: 6px; }
+    </style>
+  </defs>
+
+  <rect width="100%" height="100%" class="bg" />
+  <text x="450" y="50" class="title" text-anchor="middle">Part 1: Front-End (Building the Tree)</text>
+
+  <text x="50" y="120" class="phase">1. Lexical Analysis (Scanning)</text>
+  <text x="50" y="150" class="comment">Reads the raw string, discards spaces, and translates to Symbol Table tokens.</text>
+
+  <rect x="50" y="170" width="800" height="70" class="box" />
+  <text x="450" y="215" class="code">position = initial + rate * 60</text>
+
+  <line x1="450" y1="240" x2="450" y2="270" stroke="#475569" stroke-width="3" marker-end="url(#arrow)" />
+
+  <rect x="50" y="280" width="800" height="70" class="box" />
+  <text x="450" y="325" class="code" fill="#ea580c">&lt;id,1&gt; &lt;=&gt; &lt;id,2&gt; &lt;+&gt; &lt;id,3&gt; &lt;*&gt; &lt;60&gt;</text>
+
+  <text x="50" y="420" class="phase">2. Syntax Analysis (Parsing)</text>
+  <text x="50" y="450" class="comment">Arranges tokens into a Syntax Tree to enforce the order of operations (* before +).</text>
+
+  <rect x="50" y="470" width="800" height="250" class="box" />
+  
+  <line x1="450" y1="510" x2="350" y2="550" class="tree-line" />
+  <line x1="450" y1="510" x2="550" y2="550" class="tree-line" />
+  <line x1="550" y1="580" x2="450" y2="620" class="tree-line" />
+  <line x1="550" y1="580" x2="650" y2="620" class="tree-line" />
+  <line x1="650" y1="650" x2="550" y2="690" class="tree-line" />
+  <line x1="650" y1="650" x2="750" y2="690" class="tree-line" />
+
+  <rect x="430" y="490" width="40" height="40" class="node-box" />
+  <text x="450" y="518" class="code">=</text>
+
+  <text x="350" y="575" class="code" fill="#ea580c">&lt;id,1&gt;</text>
+  
+  <rect x="530" y="560" width="40" height="40" class="node-box" />
+  <text x="550" y="588" class="code">+</text>
+
+  <text x="450" y="645" class="code" fill="#ea580c">&lt;id,2&gt;</text>
+
+  <rect x="630" y="630" width="40" height="40" class="node-box" />
+  <text x="650" y="658" class="code">*</text>
+
+  <text x="550" y="715" class="code" fill="#ea580c">&lt;id,3&gt;</text>
+  <text x="750" y="715" class="code">60</text>
+
+</svg>
