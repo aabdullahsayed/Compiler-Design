@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 650" width="100%" height="100%">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#333333" />
+    </marker>
+    <style>
+      .box-base { rx: 8px; ry: 8px; stroke: #2c3e50; stroke-width: 2; }
+      .box-source { fill: #27ae60; }
+      .box-compiler { fill: #2980b9; }
+      .box-machine { fill: #d35400; }
+      .box-execution { fill: #c0392b; }
+      .box-interpreter { fill: #8e44ad; }
+      .box-input { fill: #16a085; }
+      .box-output { fill: #7f8c8d; }
+      
+      .text-main { font-family: 'Segoe UI', Helvetica, sans-serif; fill: #ffffff; font-weight: bold; text-anchor: middle; dominant-baseline: middle; }
+      .text-sub { font-family: 'Segoe UI', Helvetica, sans-serif; fill: #ecf0f1; text-anchor: middle; dominant-baseline: middle; }
+      .text-phase { font-family: 'Segoe UI', Helvetica, sans-serif; font-size: 20px; font-weight: bold; }
+      
+      .line-flow { stroke: #333333; stroke-width: 3; marker-end: url(#arrow); }
+      .line-divider { stroke: #bdc3c7; stroke-width: 2; stroke-dasharray: 8,8; }
+    </style>
+  </defs>
+
+  <rect width="100%" height="100%" fill="#f8f9fa" />
+
+  <text x="550" y="35" font-family="'Segoe UI', Helvetica, sans-serif" font-size="28" font-weight="bold" text-anchor="middle" fill="#2c3e50">Execution Flow: Compiler vs. Interpreter</text>
+
+  <line x1="550" y1="70" x2="550" y2="620" class="line-divider" />
+
+  <rect x="200" y="70" width="200" height="30" fill="#ecf0f1" rx="5" />
+  <text x="300" y="86" font-family="'Segoe UI', Helvetica, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#2980b9">COMPILER</text>
+
+  <rect x="700" y="70" width="200" height="30" fill="#ecf0f1" rx="5" />
+  <text x="800" y="86" font-family="'Segoe UI', Helvetica, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#8e44ad">INTERPRETER</text>
+
+  <text x="180" y="200" class="text-phase" text-anchor="end" fill="#2980b9">COMPILE TIME</text>
+  <text x="180" y="420" class="text-phase" text-anchor="end" fill="#c0392b">RUN TIME</text>
+
+  <rect x="200" y="120" width="200" height="60" class="box-base box-source" />
+  <text x="300" y="142" class="text-main" font-size="18">Source Code</text>
+  <text x="300" y="162" class="text-sub" font-size="14">(.c, .cpp, .go)</text>
+
+  <line x1="300" y1="180" x2="300" y2="225" class="line-flow" />
+
+  <rect x="200" y="230" width="200" height="60" class="box-base box-compiler" />
+  <text x="300" y="252" class="text-main" font-size="18">Compiler</text>
+  <text x="300" y="272" class="text-sub" font-size="14">(Translates entire file at once)</text>
+
+  <line x1="300" y1="290" x2="300" y2="335" class="line-flow" />
+
+  <rect x="200" y="340" width="200" height="60" class="box-base box-machine" />
+  <text x="300" y="362" class="text-main" font-size="18">Machine Code File</text>
+  <text x="300" y="382" class="text-sub" font-size="14">(Executable .exe / .bin)</text>
+
+  <line x1="300" y1="400" x2="300" y2="445" class="line-flow" />
+
+  <rect x="420" y="460" width="80" height="40" class="box-base box-input" />
+  <text x="460" y="482" class="text-main" font-size="14">Input Data</text>
+
+  <line x1="420" y1="480" x2="405" y2="480" class="line-flow" />
+
+  <rect x="200" y="450" width="200" height="60" class="box-base box-execution" />
+  <text x="300" y="472" class="text-main" font-size="18">Hardware Execution</text>
+  <text x="300" y="492" class="text-sub" font-size="14">(Direct CPU Processing)</text>
+
+  <line x1="300" y1="510" x2="300" y2="555" class="line-flow" />
+
+  <rect x="200" y="560" width="200" height="50" class="box-base box-output" />
+  <text x="300" y="587" class="text-main" font-size="18">Program Output</text>
+
+
+  <text x="970" y="380" class="text-phase" text-anchor="start" fill="#8e44ad">RUN TIME</text>
+  <text x="970" y="405" font-family="'Segoe UI', Helvetica, sans-serif" font-size="15" font-style="italic" fill="#7f8c8d" text-anchor="start">Single Phase Execution</text>
+
+  <rect x="700" y="120" width="200" height="60" class="box-base box-source" />
+  <text x="800" y="142" class="text-main" font-size="18">Source Code</text>
+  <text x="800" y="162" class="text-sub" font-size="14">(.py, .js, .rb)</text>
+
+  <line x1="800" y1="180" x2="800" y2="245" class="line-flow" />
+
+  <rect x="560" y="360" width="80" height="40" class="box-base box-input" />
+  <text x="600" y="382" class="text-main" font-size="14">Input Data</text>
+
+  <line x1="640" y1="380" x2="650" y2="380" class="line-flow" />
+
+  <rect x="650" y="250" width="300" height="260" class="box-base box-interpreter" />
+  <text x="800" y="280" class="text-main" font-size="20">Interpreter Program</text>
+  <text x="800" y="300" class="text-sub" font-size="15">(Execution Engine)</text>
+
+  <text x="800" y="340" class="text-main" font-size="16">1. Reads one line of code</text>
+  <text x="800" y="370" class="text-main" font-size="16">2. Translates to instructions</text>
+  <text x="800" y="400" class="text-main" font-size="16">3. CPU executes immediately</text>
+  <text x="800" y="430" class="text-main" font-size="16">4. Repeats for next line</text>
+
+  <text x="800" y="480" class="text-sub" font-size="14" font-style="italic">(Runs natively on host OS)</text>
+
+  <line x1="800" y1="510" x2="800" y2="555" class="line-flow" />
+
+  <rect x="700" y="560" width="200" height="50" class="box-base box-output" />
+  <text x="800" y="587" class="text-main" font-size="18">Program Output</text>
+
+</svg>
