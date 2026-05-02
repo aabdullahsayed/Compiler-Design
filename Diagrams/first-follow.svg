@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#1e1e1e" />
+    </marker>
+    <marker id="arrowhead-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e03131" />
+    </marker>
+    <marker id="arrowhead-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#1971c2" />
+    </marker>
+    
+    <filter id="rough" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" result="noise" />
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+  </defs>
+
+  <style>
+    /* Hand-drawn font simulation */
+    .font { font-family: 'Comic Sans MS', 'Chalkboard SE', 'Caveat', cursive, sans-serif; }
+    .title { font-size: 26px; font-weight: bold; fill: #1e1e1e; }
+    .node-text { font-size: 22px; font-weight: bold; fill: #1e1e1e; }
+    .label-text { font-size: 16px; fill: #1e1e1e; }
+    .red-text { font-size: 18px; font-weight: bold; fill: #e03131; }
+    .blue-text { font-size: 18px; font-weight: bold; fill: #1971c2; }
+    
+    /* Excalidraw stroke styles */
+    .line { stroke: #1e1e1e; stroke-width: 2.5; fill: none; stroke-linecap: round; stroke-linejoin: round; filter: url(#rough); }
+    .dashed { stroke-dasharray: 8 8; filter: none; }
+    
+    /* Colors */
+    .bg-non-terminal { fill: #e8f0fe; }
+    .bg-terminal { fill: #fce8e6; }
+  </style>
+
+  <rect width="100%" height="100%" fill="#faf9f6" />
+
+  <text x="400" y="40" text-anchor="middle" class="font title">FIRST vs FOLLOW (Visualized)</text>
+
+  <path d="M 40 60 Q 130 58 220 62 Q 225 100 218 140 Q 120 145 42 138 Q 38 100 40 60 Z" class="line" fill="#ffffff" />
+  <circle cx="65" cy="85" r="14" class="line bg-non-terminal" />
+  <text x="90" y="91" class="font label-text">Non-Terminal (Rule)</text>
+  <circle cx="65" cy="115" r="14" class="line bg-terminal" />
+  <text x="90" y="121" class="font label-text">Terminal (Token)</text>
+
+  <path d="M 540 400 Q 640 395 750 402 Q 755 480 745 560 Q 640 565 535 558 Q 530 480 540 400 Z" class="line" fill="#ffffff" />
+  <text x="560" y="435" class="font" style="font-size: 20px; font-weight: bold; fill: #1e1e1e; text-decoration: underline;">Grammar Rules:</text>
+  <text x="560" y="470" class="font" style="font-size: 18px; fill: #1e1e1e;">1. S → x A y</text>
+  <text x="560" y="505" class="font" style="font-size: 18px; fill: #1e1e1e;">2. A → B c</text>
+  <text x="560" y="540" class="font" style="font-size: 18px; fill: #1e1e1e;">3. B → b</text>
+
+  <path d="M 400 130 Q 310 160 250 210" class="line" /> <path d="M 400 130 Q 402 170 400 210" class="line" /> <path d="M 400 130 Q 480 160 550 210" class="line" /> <path d="M 400 260 Q 350 300 320 340" class="line" /> <path d="M 400 260 Q 450 300 480 340" class="line" /> <path d="M 320 390 Q 325 430 320 470" class="line" /> <circle cx="400" cy="110" r="26" class="line bg-non-terminal" />
+  <text x="400" y="118" text-anchor="middle" class="font node-text">S</text>
+
+  <circle cx="250" cy="235" r="22" class="line bg-terminal" />
+  <text x="250" y="242" text-anchor="middle" class="font node-text">x</text>
+
+  <circle cx="400" cy="235" r="26" class="line bg-non-terminal" />
+  <text x="400" y="243" text-anchor="middle" class="font node-text">A</text>
+
+  <circle cx="550" cy="235" r="22" class="line bg-terminal" />
+  <text x="550" y="242" text-anchor="middle" class="font node-text">y</text>
+
+  <circle cx="320" cy="365" r="26" class="line bg-non-terminal" />
+  <text x="320" y="373" text-anchor="middle" class="font node-text">B</text>
+
+  <circle cx="480" cy="365" r="22" class="line bg-terminal" />
+  <text x="480" y="372" text-anchor="middle" class="font node-text">c</text>
+
+  <circle cx="320" cy="495" r="22" class="line bg-terminal" />
+  <text x="320" y="502" text-anchor="middle" class="font node-text">b</text>
+
+
+  <path d="M 365 240 Q 200 300 290 480" class="dashed" stroke="#e03131" stroke-width="3" fill="none" marker-end="url(#arrowhead-red)" />
+  
+  <path d="M 60 380 Q 210 375 220 380 Q 225 430 215 440 Q 65 445 55 435 Q 50 400 60 380 Z" stroke="#e03131" stroke-width="2" fill="#fff5f5" class="line" />
+  <text x="138" y="405" text-anchor="middle" class="font red-text">FIRST(A) = { b }</text>
+  <text x="138" y="425" text-anchor="middle" class="font" style="font-size:14px; fill:#e03131;">Looks DOWN &amp; LEFT</text>
+
+  <path d="M 435 235 Q 480 200 520 220" class="dashed" stroke="#1971c2" stroke-width="3" fill="none" marker-end="url(#arrowhead-blue)" />
+  
+  <path d="M 590 140 Q 760 135 770 140 Q 775 190 765 200 Q 595 205 585 195 Q 580 160 590 140 Z" stroke="#1971c2" stroke-width="2" fill="#e7f5ff" class="line" />
+  <text x="678" y="165" text-anchor="middle" class="font blue-text">FOLLOW(A) = { y }</text>
+  <text x="678" y="185" text-anchor="middle" class="font" style="font-size:14px; fill:#1971c2;">Looks OUT &amp; RIGHT</text>
+
+</svg>
